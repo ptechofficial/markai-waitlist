@@ -44,7 +44,7 @@ const Index = () => {
       <Features />
       <AiTeammate />
       <Benefits />
-      <SocialProof />
+      {/* <SocialProof /> */}
       <Roadmap />
       <CallToAction />
       <Footer />

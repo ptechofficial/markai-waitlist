@@ -1,9 +1,9 @@
-
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { useToast } from '@/hooks/use-toast';
 import { Check } from 'lucide-react';
+import markImg from '/images/mark.png';
 
 const Hero = () => {
   const [email, setEmail] = useState('');
@@ -37,9 +37,10 @@ const Hero = () => {
     <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-gradient-dark bg-grid px-4">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(139,92,246,0.15),transparent_40%)]"></div>
       
+      <img src={markImg} alt="Mark mascot" className="mx-auto mb-6 w-32 h-32 object-contain" />
       <div className="relative z-10 container mx-auto text-center max-w-4xl">
         <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 animate-fade-up">
-          Your First <span className="gradient-text">AI Hire</span> is Ready.
+          Meet your <span className="gradient-text">AI Social Media Manager</span>
         </h1>
         
         <p className="text-xl md:text-2xl text-gray-300 mb-10 max-w-2xl mx-auto animate-fade-up-delay-1">

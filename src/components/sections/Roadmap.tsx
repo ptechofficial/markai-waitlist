@@ -7,21 +7,21 @@ const Roadmap = () => {
     {
       date: "June 2025",
       title: "Alpha Launch",
-      description: "First access for our founding members with core features: content assistance, scheduling, and brand voice learning.",
+      description: "Early access to Mark.ai with core features: content assistance, scheduling, and brand voice learning.",
       status: "upcoming",
       color: "purple"
     },
     {
-      date: "August 2025",
-      title: "Beta with Team Collaboration",
-      description: "Team features launch: shared calendars, collaborative workflows, and cross-platform integration.",
+      date: "July 2025",
+      title: "Beta Launch",
+      description: "Team management tools, analytics dashboard, join team meetings to summarise, and brainstorm mode.",
       status: "planned",
       color: "blue"
     },
     {
       date: "Late 2025",
-      title: "Public Launch + APIs",
-      description: "Full public release with API access for custom integrations and advanced workflows.",
+      title: "Public Launch",
+      description: "Multi-brand agency worksapce with email, image generation & SAAS integrations.",
       status: "planned",
       color: "emerald"
     }
@@ -35,7 +35,7 @@ const Roadmap = () => {
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">What's Coming Next</h2>
           <p className="text-gray-400 max-w-2xl mx-auto">
-            Our roadmap to building the ultimate AI marketing teammate
+            Our roadmap to building the ultimate AI marketing employee
           </p>
         </div>
 
@@ -55,18 +55,18 @@ const Roadmap = () => {
                       {item.date}
                     </div>
                     <h3 className="text-xl font-bold mb-2">{item.title}</h3>
-                    <p className="text-gray-400 mb-4">{item.description}</p>
+                    <p className={`text-gray-400 mb-4 ${item.title.includes("Beta") ? '' : ''}`}>{item.description}</p>
                     
                     <div className={`flex items-center ${index % 2 === 0 ? 'md:justify-end' : ''}`}>
                       {item.status === 'upcoming' ? (
                         <span className="flex items-center text-purple-400 text-sm">
                           <span className="w-2 h-2 rounded-full bg-purple-400 mr-2 animate-pulse"></span>
-                          Coming soon
+                          Launching soon
                         </span>
                       ) : (
                         <span className="flex items-center text-gray-500 text-sm">
                           <span className="w-2 h-2 rounded-full bg-gray-500 mr-2"></span>
-                          In development
+                          Coming soon
                         </span>
                       )}
                     </div>

@@ -1,7 +1,7 @@
-
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
+import markAiLogo from '/images/mark-ai-txt.png';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -17,14 +17,14 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'py-3 backdrop-blur-xl bg-black/70' : 'py-5 bg-transparent'
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 h-[80px] ${
+        isScrolled ? 'backdrop-blur-xl bg-black/70' : 'bg-transparent'
       }`}
     >
-      <div className="container mx-auto px-4 flex items-center justify-between">
+      <div className="container mx-auto px-4 h-full flex items-center justify-between">
         <Link to="/" className="flex items-center">
-          <span className="text-2xl font-bold font-space-grotesk">
-            Mark<span className="text-purple-500">.AI</span>
+          <span className="text-purple-500 text-2xl font-bold font-space-grotesk">
+            <img src={markAiLogo} alt="Mark.AI" className="h-20" />
           </span>
         </Link>
 

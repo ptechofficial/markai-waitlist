@@ -41,12 +41,12 @@ const AiTeammate = () => {
   }, [visibleMessages.length]);
 
   return (
-    <section id="ai-teammate-section" className="py-24 bg-gradient-dark relative">
+    <section id="ai-teammate-section" className="py-24 bg-black relative">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">The "AI Teammate" Experience</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-6">The ‘AI Employee’ Experience</h2>
           <p className="text-gray-400 max-w-2xl mx-auto">
-            Say goodbye to marketing chaos and hello to your new AI teammate who works with you, not for you.
+            Say goodbye to marketing chaos and hello to your new AI employee who works with you, not for you.
           </p>
         </div>
 
