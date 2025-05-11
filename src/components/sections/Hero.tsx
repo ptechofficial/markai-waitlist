@@ -5,6 +5,10 @@ import { Check } from 'lucide-react';
 import markImg from '/images/mark.png';
 import WaitlistForm from '@/components/waitlist/WaitlistForm';
 import { useWaitlist } from '@/hooks/use-waitlist';
+import user1 from '/images/Saurabh.png';
+import user2 from '/images/liam.png';
+import user3 from '/images/prakarsh.png';
+import user4 from '/images/user.png';
 
 const Hero = () => {
   const {
@@ -60,13 +64,13 @@ const Hero = () => {
         
         <div className="mt-8 flex items-center justify-center space-x-3 text-sm text-gray-400 animate-fade-up-delay-3">
           <div className="flex -space-x-2">
-            {[1, 2, 3, 4].map((i) => (
-              <div 
-                key={i} 
-                className="w-8 h-8 rounded-full bg-gradient-to-r from-purple-600 to-blue-500 border-2 border-gray-900 flex items-center justify-center text-xs"
-              >
-                {i}
-              </div>
+            {[user1, user2, user3, user4].map((img, i) => (
+              <img
+                key={i}
+                src={img}
+                alt={`User ${i + 1}`}
+                className="w-8 h-8 rounded-full border-2 border-gray-900 object-cover bg-white"
+              />
             ))}
           </div>
           <span>200+ people on waitlist</span>
