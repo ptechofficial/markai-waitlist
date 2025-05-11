@@ -101,7 +101,7 @@ const WaitlistForm = ({ open, onOpenChange, onSubmit, initialEmail, isSubmitting
                 <FormItem>
                   <FormLabel>Email</FormLabel>
                   <FormControl>
-                    <Input {...field} disabled />
+                    <Input {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
