@@ -56,8 +56,16 @@ const WaitlistForm = ({ open, onOpenChange, onSubmit, initialEmail, isSubmitting
     }
   });
 
-  const handleSubmit = (data: z.infer<typeof formSchema>) => {
-    onSubmit(data);
+  const handleSubmit = (values: z.infer<typeof formSchema>) => {
+    // Ensure all required fields are properly typed for WaitlistFormData
+    const formData: WaitlistFormData = {
+      name: values.name,
+      email: values.email,
+      businessType: values.businessType,
+      businessWebsite: values.businessWebsite || "" // Ensure empty string if not provided
+    };
+    
+    onSubmit(formData);
   };
 
   return (
