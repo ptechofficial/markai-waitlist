@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { useToast } from '@/hooks/use-toast';
 
@@ -17,33 +16,57 @@ export function useWaitlist() {
   const { toast } = useToast();
 
   // Submit only the email initially
-  const handleEmailSubmit = (e: React.FormEvent) => {
+  const handleEmailSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!email) return;
-    
-    // Show the dialog to collect more information
-    setShowDialog(true);
+    setIsSubmitting(true);
+    try {
+      setShowDialog(true);
+      setIsSubmitting(false);
+      const res = await fetch('https://5jsanjhv.rpcl.app/webhook/waitlist', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email }),
+      });
+      if (!res.ok) throw new Error('Failed to join waitlist');
+    } catch (err) {
+      toast({
+        title: 'Error',
+        description: 'Failed to join waitlist. Please try again.',
+        duration: 5000,
+      });
+    } finally {
+    }
   };
 
   // Submit the full form data
-  const handleFormSubmit = (formData: WaitlistFormData) => {
+  const handleFormSubmit = async (formData: WaitlistFormData) => {
     setIsSubmitting(true);
-    
-    // Simulate API call
-    setTimeout(() => {
-      setIsSubmitting(false);
+    try {
+      const res = await fetch('https://5jsanjhv.rpcl.app/webhook/waitlist', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+      if (!res.ok) throw new Error('Failed to complete registration');
       setIsSubmitted(true);
       setShowDialog(false);
       setEmail('');
-      
       toast({
         title: "Congratulations! You're on the waitlist.",
-        description: "Check your email for future communications.",
+        description: 'Check your email for future communications.',
         duration: 5000,
       });
-      
       setTimeout(() => setIsSubmitted(false), 5000);
-    }, 1500);
+    } catch (err) {
+      toast({
+        title: 'Error',
+        description: 'Failed to complete registration. Please try again.',
+        duration: 5000,
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return {
