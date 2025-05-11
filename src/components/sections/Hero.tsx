@@ -1,37 +1,22 @@
 
-import React, { useState } from 'react';
+import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { useToast } from '@/hooks/use-toast';
 import { Check } from 'lucide-react';
+import WaitlistForm from '@/components/waitlist/WaitlistForm';
+import { useWaitlist } from '@/hooks/use-waitlist';
 
 const Hero = () => {
-  const [email, setEmail] = useState('');
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSubmitted, setIsSubmitted] = useState(false);
-  const { toast } = useToast();
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!email) return;
-
-    setIsSubmitting(true);
-    
-    // Simulate API call
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setIsSubmitted(true);
-      setEmail('');
-      
-      toast({
-        title: "You're on the waitlist!",
-        description: "We'll notify you when Mark.AI is ready.",
-        duration: 5000,
-      });
-      
-      setTimeout(() => setIsSubmitted(false), 5000);
-    }, 1500);
-  };
+  const {
+    email,
+    setEmail,
+    isSubmitting,
+    isSubmitted,
+    showDialog,
+    setShowDialog,
+    handleEmailSubmit,
+    handleFormSubmit
+  } = useWaitlist();
 
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-gradient-dark bg-grid px-4">
@@ -48,7 +33,7 @@ const Hero = () => {
         
         <div className="max-w-md mx-auto animate-fade-up-delay-2">
           {!isSubmitted ? (
-            <form onSubmit={handleSubmit} className="flex flex-col md:flex-row gap-3" id="waitlist">
+            <form onSubmit={handleEmailSubmit} className="flex flex-col md:flex-row gap-3" id="waitlist">
               <Input
                 type="email"
                 placeholder="Your email address"
@@ -60,9 +45,8 @@ const Hero = () => {
               <Button 
                 type="submit" 
                 className="h-12 bg-gradient-to-r from-purple-600 to-blue-500 hover:from-purple-700 hover:to-blue-600 text-white font-medium px-8"
-                disabled={isSubmitting}
               >
-                {isSubmitting ? 'Joining...' : 'Join Waitlist'}
+                Join Waitlist
               </Button>
             </form>
           ) : (
@@ -95,6 +79,15 @@ const Hero = () => {
           <div className="w-1.5 h-3 bg-gray-500 rounded-full mt-2 animate-bounce"></div>
         </div>
       </div>
+      
+      {/* Waitlist Form Dialog */}
+      <WaitlistForm 
+        open={showDialog} 
+        onOpenChange={setShowDialog} 
+        onSubmit={handleFormSubmit}
+        initialEmail={email}
+        isSubmitting={isSubmitting}
+      />
     </section>
   );
 };
