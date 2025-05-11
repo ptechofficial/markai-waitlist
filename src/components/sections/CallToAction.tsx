@@ -2,15 +2,22 @@
 import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { useToast } from '@/hooks/use-toast';
 import { Check } from 'lucide-react';
+import WaitlistForm from '@/components/waitlist/WaitlistForm';
+import { useWaitlist } from '@/hooks/use-waitlist';
 
 const CallToAction = () => {
-  const [email, setEmail] = useState('');
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSubmitted, setIsSubmitted] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
-  const { toast } = useToast();
+  const {
+    email,
+    setEmail,
+    isSubmitting,
+    isSubmitted,
+    showDialog,
+    setShowDialog,
+    handleEmailSubmit,
+    handleFormSubmit
+  } = useWaitlist();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -32,28 +39,6 @@ const CallToAction = () => {
     };
   }, []);
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!email) return;
-
-    setIsSubmitting(true);
-    
-    // Simulate API call
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setIsSubmitted(true);
-      setEmail('');
-      
-      toast({
-        title: "You're on the waitlist!",
-        description: "We'll notify you when Mark.AI is ready.",
-        duration: 5000,
-      });
-      
-      setTimeout(() => setIsSubmitted(false), 5000);
-    }, 1500);
-  };
-
   return (
     <>
       {/* Floating CTA */}
@@ -63,8 +48,8 @@ const CallToAction = () => {
         }`}
       >
         <div className="glass px-4 py-3 rounded-full flex items-center gap-4 border border-white/10 shadow-lg">
-          <span className="text-sm font-medium hidden md:block">Ready to hire your first AI employee?</span>
-          <form onSubmit={handleSubmit} className="flex items-center gap-2">
+          <span className="text-sm font-medium hidden md:block">Ready to hire your first AI teammate?</span>
+          <form onSubmit={handleEmailSubmit} className="flex items-center gap-2">
             <Input
               type="email"
               placeholder="Your email"
@@ -77,9 +62,8 @@ const CallToAction = () => {
               type="submit" 
               size="sm"
               className="h-9 bg-gradient-to-r from-purple-600 to-blue-500 hover:from-purple-700 hover:to-blue-600 text-white"
-              disabled={isSubmitting}
             >
-              {isSubmitting ? 'Joining...' : 'Join Now'}
+              Join Now
             </Button>
           </form>
         </div>
@@ -98,7 +82,7 @@ const CallToAction = () => {
             
             <div className="max-w-md mx-auto">
               {!isSubmitted ? (
-                <form onSubmit={handleSubmit} className="flex flex-col md:flex-row gap-3">
+                <form onSubmit={handleEmailSubmit} className="flex flex-col md:flex-row gap-3">
                   <Input
                     type="email"
                     placeholder="Your email address"
@@ -110,9 +94,8 @@ const CallToAction = () => {
                   <Button 
                     type="submit" 
                     className="h-12 bg-gradient-to-r from-purple-600 to-blue-500 hover:from-purple-700 hover:to-blue-600 text-white font-medium px-8"
-                    disabled={isSubmitting}
                   >
-                    {isSubmitting ? 'Joining...' : 'Join Waitlist'}
+                    Join Waitlist
                   </Button>
                 </form>
               ) : (
@@ -125,6 +108,15 @@ const CallToAction = () => {
           </div>
         </div>
       </section>
+      
+      {/* Waitlist Form Dialog */}
+      <WaitlistForm 
+        open={showDialog} 
+        onOpenChange={setShowDialog} 
+        onSubmit={handleFormSubmit}
+        initialEmail={email}
+        isSubmitting={isSubmitting}
+      />
     </>
   );
 };
