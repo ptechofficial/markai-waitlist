@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { 
   Dialog,
@@ -42,7 +41,7 @@ const formSchema = z.object({
   name: z.string().min(2, { message: "Name must be at least 2 characters." }),
   email: z.string().email({ message: "Please enter a valid email address." }),
   businessType: z.string().min(1, { message: "Please select a business type." }),
-  businessWebsite: z.string().url({ message: "Please enter a valid URL." }).or(z.string().length(0))
+  businessWebsite: z.string().optional(),
 });
 
 const WaitlistForm = ({ open, onOpenChange, onSubmit, initialEmail, isSubmitting }: WaitlistFormProps) => {
@@ -101,7 +100,7 @@ const WaitlistForm = ({ open, onOpenChange, onSubmit, initialEmail, isSubmitting
                 <FormItem>
                   <FormLabel>Email</FormLabel>
                   <FormControl>
-                    <Input {...field} />
+                    <Input placeholder="Your email" {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -142,7 +141,7 @@ const WaitlistForm = ({ open, onOpenChange, onSubmit, initialEmail, isSubmitting
                 <FormItem>
                   <FormLabel>Business Website (optional)</FormLabel>
                   <FormControl>
-                    <Input placeholder="https://" {...field} />
+                    <Input placeholder="Your website" {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
