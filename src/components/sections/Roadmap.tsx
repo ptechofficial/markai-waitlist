@@ -21,7 +21,7 @@ const Roadmap = () => {
     {
       date: "Late 2025",
       title: "Public Launch",
-      description: "Multi-brand agency worksapce with email, image generation & SAAS integrations.",
+      description: "Multi-brand agency worksapce with email, image generation and SAAS integrations.",
       status: "planned",
       color: "emerald"
     }
