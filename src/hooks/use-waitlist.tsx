@@ -57,14 +57,17 @@ export function useWaitlist() {
         description: 'Check your email for future communications.',
         duration: 5000,
       });
-      setTimeout(() => setIsSubmitted(false), 5000);
+      
+      // Reset isSubmitted after toast duration
+      setTimeout(() => {
+        setIsSubmitted(false);
+      }, 5000);
     } catch (err) {
       toast({
         title: 'Error',
         description: 'Failed to complete registration. Please try again.',
         duration: 5000,
       });
-    } finally {
       setIsSubmitting(false);
     }
   };

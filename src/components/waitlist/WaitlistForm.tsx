@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect } from 'react';
 import { 
   Dialog,
   DialogContent,
@@ -54,6 +54,23 @@ const WaitlistForm = ({ open, onOpenChange, onSubmit, initialEmail, isSubmitting
       businessWebsite: ""
     }
   });
+
+  // Reset form when dialog closes
+  useEffect(() => {
+    if (!open) {
+      form.reset({
+        name: "",
+        email: "",
+        businessType: "",
+        businessWebsite: ""
+      });
+    }
+  }, [open, form]);
+
+  // Update email field when initialEmail changes
+  useEffect(() => {
+    form.setValue('email', initialEmail);
+  }, [initialEmail, form]);
 
   const handleSubmit = (values: z.infer<typeof formSchema>) => {
     // Ensure all required fields are properly typed for WaitlistFormData
