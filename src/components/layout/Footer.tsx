@@ -13,7 +13,7 @@ const Footer = () => {
               </span>
             </div>
             <p className="mt-2 text-gray-400 text-sm">
-              Your first AI employee for marketing.
+              Built by The Honeymooners Club
             </p>
           </div>
           
@@ -40,16 +40,21 @@ const Footer = () => {
               </a>
             </div>
             
+            <div className="text-gray-500 text-sm mb-4">
+              <a href="#" className="hover:text-gray-300 mr-4">About</a>
+              <a href="#" className="hover:text-gray-300 mr-4">Privacy Policy</a>
+              <a href="#" className="hover:text-gray-300">Terms of Service</a>
+            </div>
+            
             <div className="text-gray-500 text-sm">
-              <a href="#" className="hover:text-gray-300 mr-4">Privacy</a>
-              <a href="#" className="hover:text-gray-300">Terms</a>
+              <a href="mailto:mark@hiremark.ai" className="hover:text-gray-300">mark@hiremark.ai</a>
             </div>
           </div>
         </div>
         
         <div className="mt-8 pt-6 border-t border-gray-800 text-center text-gray-500 text-sm">
-          <p>"Built by founders who hate bad marketing as much as you do."</p>
-          <p className="mt-2">© {new Date().getFullYear()} Mark.AI. All rights reserved.</p>
+          <p className="mb-2">Mark.ai – Built by The Honeymooners Club</p>
+          <p>© {new Date().getFullYear()} Mark.AI. All rights reserved.</p>
         </div>
       </div>
     </footer>
