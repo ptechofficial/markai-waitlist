@@ -2,12 +2,15 @@
 import React, { useEffect } from 'react';
 import Navbar from '@/components/layout/Navbar';
 import Hero from '@/components/sections/Hero';
-import Features from '@/components/sections/Features';
-import AiTeammate from '@/components/sections/AiTeammate';
-import Benefits from '@/components/sections/Benefits';
-import SocialProof from '@/components/sections/SocialProof';
+import WhatIsMarkAI from '@/components/sections/WhatIsMarkAI';
+import PilotProgram from '@/components/sections/PilotProgram';
+import HowMarkWorks from '@/components/sections/HowMarkWorks';
+import WhoShouldUse from '@/components/sections/WhoShouldUse';
+import SolutionBenefits from '@/components/sections/SolutionBenefits';
+import PilotDetails from '@/components/sections/PilotDetails';
+import ChatDemo from '@/components/sections/ChatDemo';
 import Roadmap from '@/components/sections/Roadmap';
-import CallToAction from '@/components/sections/CallToAction';
+import PilotApplication from '@/components/sections/PilotApplication';
 import Footer from '@/components/layout/Footer';
 
 const Index = () => {
@@ -41,12 +44,15 @@ const Index = () => {
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
       <Navbar />
       <Hero />
-      <Features />
-      <AiTeammate />
-      <Benefits />
-      {/* <SocialProof /> */}
+      <WhatIsMarkAI />
+      <PilotProgram />
+      <HowMarkWorks />
+      <WhoShouldUse />
+      <SolutionBenefits />
+      <PilotDetails />
+      <ChatDemo />
       <Roadmap />
-      <CallToAction />
+      <PilotApplication />
       <Footer />
     </div>
   );
