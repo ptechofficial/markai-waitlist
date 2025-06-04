@@ -87,10 +87,14 @@ const PilotDetails = () => {
         </div>
 
         <div className="text-center">
-          <div className="glass p-8 rounded-lg border border-white/10 max-w-3xl mx-auto">
-            <div className="text-6xl mb-4">⚖️</div>
+          <div className="glass p-8 rounded-lg border border-white/10 max-w-4xl mx-auto">
+            <img 
+              src="/lovable-uploads/16a695b1-6fcf-451c-a109-acfec5e809a3.png" 
+              alt="Split visual: Mark avatar with golden key (benefits) and Mark avatar with checklist (requirements)" 
+              className="mx-auto mb-4 w-full max-w-2xl h-auto object-contain" 
+            />
             <p className="text-gray-300">
-              Split visual: left half shows Mark avatar presenting a golden key (benefits), right half shows Mark avatar pointing to a checklist (requirements)—visually pairing rewards vs. commitments.
+              The perfect balance: Mark presenting the golden key to exclusive benefits, alongside the clear requirements checklist for pilot participants.
             </p>
           </div>
         </div>

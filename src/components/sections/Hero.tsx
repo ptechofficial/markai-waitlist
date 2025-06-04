@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Check } from 'lucide-react';
-import markImg from '/images/mark.png';
 import WaitlistForm from '@/components/waitlist/WaitlistForm';
 import { useWaitlist } from '@/hooks/use-waitlist';
 
@@ -30,7 +29,11 @@ const Hero = () => {
     <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-gradient-dark bg-grid px-4">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(139,92,246,0.15),transparent_40%)]"></div>
       
-      <img src={markImg} alt="Mark mascot with arms out, juggling social channels" className="mx-auto mb-8 w-40 h-40 object-contain animate-float" />
+      <img 
+        src="/lovable-uploads/3a53c206-8988-417b-b6aa-780ec8abaa13.png" 
+        alt="Mark mascot with arms out and friendly message - Don't worry, he's friendly" 
+        className="mx-auto mb-8 w-80 h-80 object-contain animate-float" 
+      />
       
       <div className="relative z-10 container mx-auto text-center max-w-5xl">
         <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 animate-fade-up">

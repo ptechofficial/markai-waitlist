@@ -33,9 +33,17 @@ const ChatDemo = () => {
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">The 'AI Employee' Experience</h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
             Sample chat transcript demonstrating Mark.ai's proactive planning and on‑brand content drafting.
           </p>
+          
+          <div className="mb-8">
+            <img 
+              src="/lovable-uploads/b8161da1-cd59-4071-bb7a-b6709a38e952.png" 
+              alt="Mark avatar with chat bubble - demonstrating conversational AI employee experience" 
+              className="mx-auto w-64 h-64 object-contain" 
+            />
+          </div>
         </div>
 
         <div className="max-w-4xl mx-auto">

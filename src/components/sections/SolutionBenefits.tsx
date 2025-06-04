@@ -48,10 +48,14 @@ const SolutionBenefits = () => {
         </div>
 
         <div className="text-center">
-          <div className="glass p-8 rounded-lg border border-white/10 max-w-2xl mx-auto">
-            <div className="text-6xl mb-4">📊</div>
+          <div className="glass p-8 rounded-lg border border-white/10 max-w-4xl mx-auto">
+            <img 
+              src="/lovable-uploads/9b887b39-df3e-48c9-8369-756d48fc5e15.png" 
+              alt="Mark avatar pointing to upward-trending growth chart - highlighting ROI and data-driven growth" 
+              className="mx-auto mb-4 w-96 h-96 object-contain" 
+            />
             <p className="text-gray-300">
-              Mark avatar pointing to an upward-trending bar chart projected behind him—highlighting growth and ROI driven by the solution.
+              Mark pointing to an upward-trending chart, demonstrating the growth and ROI you can expect from implementing AI automation in your workflow.
             </p>
           </div>
         </div>

@@ -66,10 +66,14 @@ const WhatIsMarkAI = () => {
         </div>
 
         <div className="text-center">
-          <div className="glass p-8 rounded-lg border border-white/10 max-w-2xl mx-auto">
-            <div className="text-6xl mb-4">🎛️</div>
+          <div className="glass p-8 rounded-lg border border-white/10 max-w-4xl mx-auto">
+            <img 
+              src="/lovable-uploads/0a7ad8d3-25f2-4498-bb4a-ed54966072db.png" 
+              alt="Mark avatar standing at a control panel with efficiency, consistency, scale, growth, and momentum badges - mastering all core capabilities" 
+              className="mx-auto mb-4 w-full max-w-2xl h-auto object-contain" 
+            />
             <p className="text-gray-300">
-              Mark avatar standing at a control panel with seven illuminated buttons, each labeled with a feature icon—conveying mastery of all core capabilities.
+              Mark standing at his control panel, mastering efficiency, consistency, scale, growth, and momentum—showcasing all his core capabilities at once.
             </p>
           </div>
         </div>

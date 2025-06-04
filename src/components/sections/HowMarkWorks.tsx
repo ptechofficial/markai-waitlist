@@ -61,9 +61,13 @@ const HowMarkWorks = () => {
 
         <div className="text-center mt-16">
           <div className="glass p-8 rounded-lg border border-white/10 max-w-3xl mx-auto">
-            <div className="text-6xl mb-4">📋</div>
+            <img 
+              src="/lovable-uploads/7b464311-327f-4a24-99f7-035c5a1d7475.png" 
+              alt="Mark avatar typing at keyboard - demonstrating automated execution step" 
+              className="mx-auto mb-4 w-80 h-80 object-contain" 
+            />
             <p className="text-gray-300">
-              Timeline of pilot process steps: A simple storyboard of three panels featuring the Mark avatar: (1) chatting via speech bubble, (2) typing at a keyboard, (3) reading feedback on a screen—illustrating the flow.
+              Mark working at his keyboard, demonstrating the automated execution that happens after your simple conversational setup.
             </p>
           </div>
         </div>
